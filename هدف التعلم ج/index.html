@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"> <!-- تحديد اللغة العربية واتجاه النص من اليمين إلى اليسار -->
+<head>
+    <meta charset="UTF-8"> <!-- تحديد مجموعة الأحرف المستخدمة في الصفحة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ضبط عرض الصفحة لتناسب الأجهزة المختلفة -->
+    <title>شركة هول إن ون</title> <!-- عنوان الصفحة يظهر في شريط العنوان للمتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف CSS خارجي -->
+    <style>
+        /* تنسيقات CSS داخلية للتصميم */
+        body { 
+            text-align: center; /* محاذاة النص إلى المنتصف */
+            background-image: url('1.jpg'); /* إضافة صورة خلفية */
+            background-size: cover; /* جعل الصورة تغطي الخلفية بالكامل */
+            color: black; /* تغيير لون النص إلى الأسود */
+        }
+        header {
+            display: flex; /* استخدام flexbox لترتيب الشعار والنص بشكل أفقي */
+            justify-content: space-between; /* توزيع المساحة بين العناصر بشكل متساوي */
+            align-items: center; /* محاذاة العناصر عمودياً */
+            padding: 20px; /* إضافة مساحة داخلية للـ header */
+            background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة للـ header */
+        }
+        .logo {
+            max-width: 100px; /* تحديد الحد الأقصى لعرض الشعار */
+            height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+        }
+        h1 {
+            margin: 0 20px; /* إضافة مسافة حول عنوان الصفحة */
+        }
+        nav ul {
+            list-style-type: none; /* إزالة النقاط من القائمة */
+            padding: 0; /* إزالة المسافة الداخلية للقائمة */
+            margin: 0; /* إزالة المسافة الخارجية للقائمة */
+        }
+        nav ul li {
+            display: inline; /* عرض العناصر في القائمة بشكل أفقي */
+            margin: 0 15px; /* إضافة مسافة بين عناصر القائمة */
+        }
+        nav ul li a {
+            text-decoration: none; /* إزالة التسطير من الروابط */
+            color: white; /* تغيير لون الروابط إلى الأبيض */
+            font-weight: bold; /* جعل النص عريض */
+        }
+        main {
+            margin-top: 40px; /* إضافة مسافة بين header والمحتوى الرئيسي */
+        }
+        .text-size-controls {
+            margin: 20px; /* إضافة مسافة حول أدوات التحكم في حجم النص */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="12.jpg" alt="شعار شركة هول إن ون" class="logo"> <!-- إضافة الشعار مع نص بديل -->
+        <h1>مرحبا بكم في شركة هول إن ون</h1> <!-- عنوان الترحيب الرئيسي -->
+        <nav>
+            <ul>
+                <li><a href="index.html">الصفحة الرئيسية</a></li> 
+                <li><a href="about.html">عن الشركة</a></li> 
+                <li><a href="services.html">الخدمات</a></li> 
+                <li><a href="offers.html">الحزم المخصصة</a></li> 
+                <li><a href="courses.html">الملاعب</a></li> 
+                <li><a href="restaurants.html">المطاعم</a></li> 
+                <li><a href="accommodation.html">الإقامة</a></li> 
+                <li><a href="contact.html">اتصل بنا</a></li> 
+                <li><a href="inquiries.html">الاستفسارات</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="text-size-controls">
+            <button onclick="changeFontSize(2)">تكبير النص</button> <!-- زر لتكبير النص -->
+            <button onclick="changeFontSize(-2)">تصغير النص</button> <!-- زر لتصغير النص -->
+        </div>
+        <h2>استمتع بجولة جولف رائعة في البرتغال</h2> <!-- عنوان فرعي -->
+        <p>استكشف أجمل الملاعب والأنشطة في منتجعنا.</p> <!-- نص وصف -->
+    </main>
+    
+    <script>
+        // تعريف متغير للحجم الحالي للنص
+        let currentFontSize = 16; // px
+        // دالة لتغيير حجم النص
+        function changeFontSize(delta) {
+            currentFontSize += delta; // تعديل حجم النص بناءً على القيمة المدخلة
+            document.body.style.fontSize = currentFontSize + 'px'; // تطبيق حجم النص الجديد
+        }
+
+        // دالة لقراءة النص بصوت عالٍ
+        function speakText() {
+            const text = document.body.innerText; // الحصول على النص الكامل من الصفحة
+            const utterance = new SpeechSynthesisUtterance(text); // إنشاء كائن جديد للنطق
+            speechSynthesis.speak(utterance); // قراءة النص بصوت عالٍ
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+    /* تهيئة أساسية */
+    body { 
+        background-size: cover; /* جعل الصورة تغطي الخلفية بالكامل */
+        color: black; /* تغيير لون النص إلى الأسود */
+        font-size: 16px; /* حجم خط أساسي */
+    }
+    /* هيدر */
+    header {
+        display: flex; /* استخدام flexbox لترتيب الشعار والنص بشكل أفقي */
+        justify-content: space-between; /* توزيع المساحة بين العناصر */
+        align-items: center; /* محاذاة العناصر عمودياً */
+        padding: 20px; /* إضافة مساحة داخلية header */
+        background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة للأعلى */
+    }
+    .logo {
+        max-width: 100px; /* تحديد الحد الأقصى لعرض الشعار */
+        height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    }
+    h1 {
+        margin: 0 20px; /* إضافة مسافة حول العنوان */
+    }
+    nav ul {
+        list-style-type: none; /* إزالة النقاط من القائمة */
+        padding: 0; /* إزالة المسافة الداخلية */
+        margin: 0; /* إزالة المسافة الخارجية */
+    }
+    nav ul li {
+        display: inline; /* عرض العناصر بشكل أفقي */
+        margin: 0 15px; /* إضافة مسافة بين العناصر */
+    }
+    nav ul li a {
+        text-decoration: none; /* إزالة التسطير من الروابط */
+        color: white; /* تغيير لون الروابط إلى الأبيض */
+        font-weight: bold; /* جعل النص عريض */
+    }
+    main {
+        margin-top: 40px; /* إضافة مسافة بين الهيد الرئيسي والمحتوى */
+    }
+    
+    /* وسائل الإعلام للتكيف */
+    @media (max-width: 768px) {
+        body {
+            font-size: 14px; /* تقليل حجم النص على الشاشات الصغيرة */
+        }
+        header {
+            flex-direction: column; /* جعل العناصر في الرأس عمودية في الشاشات الصغيرة */
+            align-items: flex-start; /* محاذاة العناصر إلى اليسار */
+        }
+        nav ul {
+            display: flex;
+            flex-direction: column; /* عرض عناصر التنقل عمودياً */
+            width: 100%; /* عرض القائمة بكامل عرض الشاشة */
+        }
+        nav ul li {
+            margin: 10px 0; /* إضافة مسافة بين العناصر */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header {
+            padding: 10px; /* تقليل المسافة الداخلية للرأس في الشاشات الصغيرة جداً */
+        }
+        h1 {
+            font-size: 20px; /* تقليل حجم العنوان */
+        }
+    }
